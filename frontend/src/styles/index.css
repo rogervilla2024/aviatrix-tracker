@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aviation Theme Base Styles */
+:root {
+  --color-sky: #0ea5e9;
+  --color-aviation-blue: #0284c7;
+  --color-aviation-dark: #0c4a6e;
+  --color-silver: #e2e8f0;
+  --color-cloud-white: #f8fafc;
+}
+
+/* Global Styles */
+body {
+  @apply bg-gradient-to-b from-sky-100 via-sky-50 to-white min-h-screen;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom Scrollbar - Aviation Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sky-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sky-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sky-600;
+}
+
+/* Cloud Animation Styles */
+@layer components {
+  .cloud {
+    @apply absolute bg-white rounded-full opacity-80;
+    filter: blur(2px);
+  }
+
+  .cloud::before,
+  .cloud::after {
+    content: '';
+    @apply absolute bg-white rounded-full;
+  }
+
+  .cloud-small {
+    width: 60px;
+    height: 30px;
+  }
+
+  .cloud-medium {
+    width: 100px;
+    height: 50px;
+  }
+
+  .cloud-large {
+    width: 150px;
+    height: 70px;
+  }
+
+  /* Aviation Card Styles */
+  .aviation-card {
+    @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-aviation border border-sky-200/50;
+    @apply transition-all duration-300 hover:shadow-aviation-lg hover:border-sky-300;
+  }
+
+  .aviation-card-dark {
+    @apply bg-sky-900/95 backdrop-blur-sm rounded-2xl shadow-aviation border border-sky-700/50;
+    @apply transition-all duration-300 hover:shadow-aviation-lg;
+  }
+
+  /* Multiplier Display Styles */
+  .multiplier-display {
+    @apply font-bold text-4xl md:text-6xl;
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  }
+
+  .multiplier-low {
+    @apply text-sky-400;
+  }
+
+  .multiplier-medium {
+    @apply text-sky-500;
+  }
+
+  .multiplier-high {
+    @apply text-sky-600;
+  }
+
+  .multiplier-mega {
+    @apply text-amber-500;
+    animation: pulseGlow 1s ease-in-out infinite;
+  }
+
+  /* Aircraft Icon Animation */
+  .aircraft-icon {
+    @apply inline-block transition-transform duration-300;
+  }
+
+  .aircraft-icon:hover {
+    @apply animate-fly;
+  }
+
+  .aircraft-flying {
+    animation: fly 2s ease-in-out infinite;
+  }
+
+  .aircraft-takeoff {
+    animation: takeoff 0.8s ease-out forwards;
+  }
+
+  /* Live Indicator */
+  .live-indicator {
+    @apply flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-500;
+  }
+
+  .live-indicator::before {
+    content: '';
+    @apply w-2 h-2 bg-red-500 rounded-full animate-pulse;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+  }
+
+  .stat-card {
+    @apply aviation-card p-4 text-center;
+  }
+
+  .stat-value {
+    @apply text-2xl md:text-3xl font-bold text-sky-600;
+  }
+
+  .stat-label {
+    @apply text-sm text-sky-500/70 mt-1;
+  }
+
+  /* NFT Badge */
+  .nft-badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-lg;
+    @apply bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold;
+  }
+
+  /* Flight History Item */
+  .flight-item {
+    @apply flex items-center justify-between p-3 rounded-xl;
+    @apply bg-sky-50/50 border border-sky-100 transition-all duration-200;
+    @apply hover:bg-sky-100/50 hover:border-sky-200;
+  }
+
+  /* Button Styles */
+  .btn-aviation {
+    @apply px-6 py-3 rounded-xl font-semibold;
+    @apply bg-gradient-to-r from-sky-500 to-sky-600 text-white;
+    @apply shadow-aviation transition-all duration-300;
+    @apply hover:from-sky-600 hover:to-sky-700 hover:shadow-aviation-lg;
+    @apply active:scale-95;
+  }
+
+  .btn-aviation-outline {
+    @apply px-6 py-3 rounded-xl font-semibold;
+    @apply bg-transparent border-2 border-sky-500 text-sky-600;
+    @apply transition-all duration-300;
+    @apply hover:bg-sky-500 hover:text-white;
+  }
+
+  /* Sky Background with Clouds */
+  .sky-background {
+    @apply relative overflow-hidden;
+    background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 30%, #0ea5e9 70%, #0284c7 100%);
+  }
+
+  .sky-background::before {
+    content: '';
+    @apply absolute inset-0 opacity-30;
+    background-image:
+      radial-gradient(ellipse 100px 60px at 10% 20%, white 0%, transparent 70%),
+      radial-gradient(ellipse 80px 40px at 30% 40%, white 0%, transparent 70%),
+      radial-gradient(ellipse 120px 70px at 70% 25%, white 0%, transparent 70%),
+      radial-gradient(ellipse 90px 50px at 85% 50%, white 0%, transparent 70%);
+  }
+
+  /* Responsible Gambling Banner */
+  .responsible-gambling-banner {
+    @apply bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg;
+    @apply text-amber-800 text-sm;
+  }
+
+  /* Disclaimer Footer */
+  .disclaimer-text {
+    @apply text-xs text-sky-600/60 leading-relaxed;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fly {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes cloudDrift {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(14, 165, 233, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.8));
+  }
+}
+
+@keyframes takeoff {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px) translateY(-50px) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .multiplier-display {
+    @apply text-3xl;
+  }
+
+  .stat-value {
+    @apply text-xl;
+  }
+}
