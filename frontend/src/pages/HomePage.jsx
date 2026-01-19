@@ -256,6 +256,27 @@ function HomePage() {
             <NFTBanner />
           </div>
 
+          {/* About Game Section */}
+          <div className="mb-8">
+            <div className="aviation-card p-6">
+              <h2 className="text-xl font-semibold text-sky-900 mb-4 flex items-center gap-2">
+                <AircraftIcon className="w-5 h-5 text-sky-600" />
+                What is Aviatrix?
+              </h2>
+              <div className="space-y-4 text-sm text-sky-700">
+                <p>Aviatrix is a groundbreaking crash game that merges traditional crash mechanics with blockchain technology and NFT ownership. Launched in 2022 by the Aviatrix.bet team, this game stands out by allowing players to own, customize, and trade unique NFT aircraft that they pilot during gameplay. It's the first crash game where your plane is truly yours.</p>
+                <p>The core gameplay follows familiar crash principles: an aircraft takes off with a rising multiplier, and players must cash out before it crashes. What distinguishes Aviatrix is the meta-layer of NFT planes with varying rarity levels, visual designs, and even mechanical advantages in some promotional events. The blockchain integration ensures transparent ownership and enables a secondary market for aircraft trading.</p>
+                <p>With a 97% RTP matching industry leaders like Aviator, Aviatrix provides fair odds while adding collectible and community dimensions absent in other crash games. The provably fair system leverages blockchain verification, giving tech-savvy players additional confidence in outcome integrity. The game has cultivated a dedicated community of NFT enthusiasts and crash game fans.</p>
+                <p>While NFT ownership adds engagement, it doesn't change the fundamental mathematics. Each flight is randomly determined, past results don't influence future outcomes, and the house edge remains constant. Your NFT plane may look unique, but probability treats all aircraft equally. Play responsibly and within your means.</p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-sky-200 flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-sky-100 rounded-full text-xs text-sky-600">RTP: 97%</span>
+                <span className="px-3 py-1 bg-sky-100 rounded-full text-xs text-sky-600">Provider: Aviatrix.bet</span>
+                <span className="px-3 py-1 bg-sky-100 rounded-full text-xs text-sky-600">Max: 10,000x</span>
+              </div>
+            </div>
+          </div>
+
           {/* Statistics Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <StatCard
